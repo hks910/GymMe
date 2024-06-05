@@ -1,0 +1,127 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Ubuntu:wght@300;400;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url("data:image/svg+xml,%3Csvg class='border shadow-md' viewBox='0 0 1081.52 608.355' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' style='width: 1081.52px; height: 608.355px;'%3E%3Crect class='bg' id='bg' x='0' y='0' width='1081.52' height='608.355' fill='%23ffffff'%3E%3C/rect%3E%3Cg transform='rotate(0 540.76 304.1775)'%3E%3Cpath d='M -640.76 -30.84 S -330.38 -73.84 0.00 -30.84 310.38 -61.25 640.76 -30.84 951.14 -61.25 1281.52 -30.84 1591.90 -71.84 1922.28 -30.84 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%230C0D0D' stroke-width='10'%3E%3C/path%3E%3Cpath d='M -640.76 30.00 S -330.38 -12.00 0.00 30.00 310.38 -6.00 640.76 30.00 951.14 -0.42 1281.52 30.00 1591.90 -0.42 1922.28 30.00 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%23191a1a' stroke-width='10'%3E%3C/path%3E%3Cpath d='M -640.76 90.84 S -330.38 36.84 0.00 90.84 310.38 60.42 640.76 90.84 951.14 60.42 1281.52 90.84 1591.90 38.84 1922.28 90.84 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%23262727' stroke-width='10'%3E%3C/path%3E%3Cpath d='M -640.76 151.67 S -330.38 111.67 0.00 151.67 310.38 121.25 640.76 151.67 951.14 121.25 1281.52 151.67 1591.90 100.67 1922.28 151.67 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%23333434' stroke-width='10'%3E%3C/path%3E%3Cpath d='M -640.76 212.51 S -343.00 182.09 0.00 212.51 310.38 182.09 640.76 212.51 951.14 162.51 1281.52 212.51 1310.28 166.51 1922.28 212.51 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%23404141' stroke-width='10'%3E%3C/path%3E%3Cpath d='M -640.76 273.34 S -330.38 242.92 0.00 273.34 310.38 242.92 640.76 273.34 899.52 242.92 1281.52 273.34 1591.90 237.34 1922.28 273.34 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%234d4e4e' stroke-width='10'%3E%3C/path%3E%3Cpath d='M -640.76 334.18 S -330.38 303.76 0.00 334.18 310.38 303.76 640.76 334.18 951.14 303.76 1281.52 334.18 1281.28 286.18 1922.28 334.18 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%235a5b5b' stroke-width='10'%3E%3C/path%3E%3Cpath d='M -640.76 395.01 S -414.00 364.60 0.00 395.01 310.38 364.60 640.76 395.01 840.52 345.01 1281.52 395.01 1565.28 355.01 1922.28 395.01 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%23676868' stroke-width='10'%3E%3C/path%3E%3Cpath d='M -640.76 455.85 S -330.38 425.43 0.00 455.85 310.38 425.43 640.76 455.85 951.14 415.85 1281.52 455.85 1581.28 395.85 1922.28 455.85 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%23747575' stroke-width='10'%3E%3C/path%3E%3Cpath d='M -640.76 516.68 S -330.38 486.27 0.00 516.68 310.38 486.27 640.76 516.68 948.52 485.68 1281.52 516.68 1591.90 464.68 1922.28 516.68 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%23818282' stroke-width='10'%3E%3C/path%3E%3Cpath d='M -640.76 577.52 S -330.38 534.52 0.00 577.52 310.38 517.52 640.76 577.52 909.52 547.10 1281.52 577.52 1591.90 538.52 1922.28 577.52 h 110 V 808.355 H -640.76 Z' fill='none' stroke='%238e8f8f' stroke-width='10'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
+main {
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    min-height: 100vh;
+    margin: auto;
+}
+
+.GymMe-Logo {
+    width: 500px;
+    margin-right: 20px;
+}
+.form-div {
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.LoginTitle {
+    font-family: 'Edu TAS Beginner', sans-serif;
+    font-size: 50px;
+}
+
+#form-input {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh 2vw;
+}
+
+.input {
+    width: 90%;
+    padding: .6rem;
+    border-radius: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.Title {
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: 70px;
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    text-align: center;
+    color: #333;
+}
+
+.remember-me {
+    display: inline-block;
+    width: 90%;
+    text-align: left;
+    font-family: 'Comme', sans-serif;
+    font-size: 15px;
+    margin-right: 5px;
+    margin: 10px 0;
+}
+
+.Register-Text {
+    font-family: 'Comme', sans-serif;
+    font-size: 15px;
+}
+
+#CheckBoxBtn {
+    font-size: 14px;
+    color: #333;
+}
+
+#LoginBtn {
+    width: 97%;
+    padding: .4rem;
+    font-weight: 700;
+    background-color: #3897f0;
+    border: none;
+    border-radius: 8px;
+    margin: 8px 0px;
+    font-family: 'Comme', sans-serif;
+    color: white;
+    cursor: pointer;
+}
+
+
+.line {
+    display: flex;
+    margin: 20px 0;
+}
+
+.arrow {
+    background-color: gray;
+    height: 1px;
+    width: 110px;
+}
+
+.content {
+    color: gray;
+    margin-top: -8px;
+    margin-left: 4px;
+    margin-right: 4px;
+}

@@ -10,7 +10,7 @@ namespace GymMe.Factory
     public class MsUserFactory
     {
         public static MsUser Create(String userName, String userEmail, 
-            DateTime userDOB, String userGender, String userRole)
+             String userGender, String userRole,String password, DateTime userDOB)
         {
             MsUser user  = new MsUser();
 
@@ -19,6 +19,7 @@ namespace GymMe.Factory
             user.UserDOB = userDOB;
             user.UserGender = userGender;
             user.UserRole = userRole;
+            user.UserPassword = password;
 
             return user;
            

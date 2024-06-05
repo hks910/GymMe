@@ -25,6 +25,23 @@ namespace GymMe.Repositories
         {
             return (from x in db.MsUsers where x.Equals(id) select x).FirstOrDefault();
         }
+
+
+        //search Username
+        public MsUser getUserByUsername(string username)
+        {
+            var user = db.MsUsers.FirstOrDefault(x => x.UserName == username);
+            if (user != null)
+            {
+                return user;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
         // cari role ketika mau update role
         public String getUserRole (int id)
         {
@@ -39,10 +56,10 @@ namespace GymMe.Repositories
 
         //nanti kalau user login pas mau add panggil function aja abis lewat logic login
         public void InsertUser(String userName, String userEmail,
-            DateTime userDOB, String userGender, String userRole)
+            String userGender, String userRole, String userPassword, DateTime userDOB)
         {
             MsUser user = MsUserFactory.Create(userName, userEmail,
-            userDOB, userGender, userRole);
+            userGender, userRole, userPassword, userDOB);
             db.MsUsers.Add(user);
             db.SaveChanges();
 
@@ -50,7 +67,8 @@ namespace GymMe.Repositories
 
         //ini buat update, nanti abis lewat logic langsung panggil aja
         public void UpdateUser(int id, String userName, String userEmail,
-            DateTime userDOB, String userGender, String userRole){
+            DateTime userDOB, String userGender, String userRole, String userPassword)
+        {
 
             MsUser user = db.MsUsers.Find(id);
             user.UserName = userName;
@@ -58,6 +76,7 @@ namespace GymMe.Repositories
             user.UserDOB = userDOB;
             user.UserGender = userGender;
             user.UserRole = userRole;
+            user.UserPassword = userPassword;
 
             db.SaveChanges();
 
