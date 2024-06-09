@@ -1,4 +1,5 @@
 ﻿using GymMe.Models;
+using GymMe.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace GymMe.Views
 {
     public partial class HomePage : System.Web.UI.Page
     {
-        Database1Entities1 db = new Database1Entities1 ();
+        MsUserRepository UserRepository = new MsUserRepository ();
         protected void Page_Load(object sender, EventArgs e)
         {
                        
@@ -26,7 +27,7 @@ namespace GymMe.Views
                 if (Session["user"] == null)
                 {
                     var id = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
-                    user = (from x in db.MsUsers where x.UserID == id select x).FirstOrDefault();
+                    user = UserRepository.getUserbyId(id);
                     Session["user"] = user;
                 }
                 else

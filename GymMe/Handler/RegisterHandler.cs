@@ -18,7 +18,7 @@ namespace GymMe.Handler
                 return errorMessage;
             }
 
-            string role = "Guest";
+            string role = "Customer";
 
             userRepository.InsertUser(username, email, gender, role, password, dob);
 

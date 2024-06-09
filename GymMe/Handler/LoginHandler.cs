@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
 
 namespace GymMe.Handler
 {
@@ -40,5 +41,12 @@ namespace GymMe.Handler
 
             return string.Empty; // No error
         }
-    }
+
+        public int getUserId(string username)
+        {
+            MsUser user = userRepository.getUserByUsername(username);
+            int userId = user.UserID;
+            return userId;
+        }
+    }   
 }

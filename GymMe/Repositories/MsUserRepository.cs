@@ -23,7 +23,7 @@ namespace GymMe.Repositories
         // buat dapetin user pakai id nya 
         public MsUser getUserbyId(int id)
         {
-            return (from x in db.MsUsers where x.Equals(id) select x).FirstOrDefault();
+            return (from x in db.MsUsers where x.UserID == id select x).FirstOrDefault();
         }
 
 
@@ -45,7 +45,6 @@ namespace GymMe.Repositories
         // cari role ketika mau update role
         public String getUserRole (int id)
         {
-
             return (from x in db.MsUsers where x.Equals(id) select x.UserRole).FirstOrDefault();
         }
         // cari password dan dipake ketika mau update password

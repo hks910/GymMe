@@ -1,4 +1,5 @@
 ﻿using GymMe.Controller;
+using GymMe.Handler;
 using GymMe.Models;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace GymMe.Views
     {
       
         private LoginController controller = new LoginController();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,7 +34,7 @@ namespace GymMe.Views
 
         protected void LoginBtn_Click(object sender, EventArgs e)
         {
-
+          
             string username = UsernameTxt.Text;
             string password = PasswordTxt.Text;
             bool isRemember = CheckBoxBtn.Checked;
@@ -40,9 +42,16 @@ namespace GymMe.Views
             MsUser user;
             string error = controller.LoginUser(username, password, isRemember, out user);
 
+       
+
+
+
             if (string.IsNullOrEmpty(error))
             {
+                //LoginHandler loginHandler = new LoginHandler();
+                //int id = loginHandler.getUserId(username);
                 ErrorLbl.ForeColor = System.Drawing.Color.Green;
+                //Response.Redirect("~/Views/HomePage.aspx?userID="+id);
                 Response.Redirect("~/Views/HomePage.aspx");
             }
             else

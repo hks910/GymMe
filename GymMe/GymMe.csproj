@@ -91,16 +91,20 @@
     </Content>
     <Content Include="Styles\CSS\LoginPage.css" />
     <Content Include="Styles\CSS\NavBar.css" />
+    <Content Include="Styles\CSS\OrderSupplement.css" />
     <Content Include="Styles\CSS\RegisterPage.css" />
     <Content Include="Styles\Img\GymMe-Logo-removebg.png" />
     <Content Include="Views\HomePage.aspx" />
     <Content Include="Views\LoginPage.aspx" />
     <Content Include="Views\LogOut.aspx" />
+    <Content Include="Views\OrderSupplement.aspx" />
     <Content Include="Views\RegisterPage.aspx" />
+    <Content Include="Views\CartPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\OrderController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
     <Compile Include="Factory\MsCartFactory.cs" />
     <Compile Include="Factory\MsSupplementFactory.cs" />
@@ -108,6 +112,8 @@
     <Compile Include="Factory\MsUserFactory.cs" />
     <Compile Include="Factory\TransactionDetailFactory.cs" />
     <Compile Include="Factory\TransactionHeaderFactory.cs" />
+    <Compile Include="Handler\OrderHandler.cs" />
+    <Compile Include="Handler\CreateTransactionHandler.cs" />
     <Compile Include="Handler\LoginHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
     <Compile Include="Models\Model1.Context.cs">
@@ -147,7 +153,6 @@
     <Compile Include="Repositories\DatabaseSingleton.cs" />
     <Compile Include="Repositories\MsCartRepository.cs" />
     <Compile Include="Repositories\MsSupplementRepository.cs" />
-    <Compile Include="Repositories\MsSupplementTypeRepository.cs" />
     <Compile Include="Repositories\MsUserRepository.cs" />
     <Compile Include="Repositories\TransactionDetailRepository.cs" />
     <Compile Include="Repositories\TransactionHeaderRepository.cs" />
@@ -172,12 +177,26 @@
     <Compile Include="Views\LogOut.aspx.designer.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\OrderSupplement.aspx.cs">
+      <DependentUpon>OrderSupplement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\OrderSupplement.aspx.designer.cs">
+      <DependentUpon>OrderSupplement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterPage.aspx.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\RegisterPage.aspx.designer.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CartPage.aspx.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CartPage.aspx.designer.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
