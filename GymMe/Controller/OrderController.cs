@@ -29,7 +29,7 @@ namespace GymMe.Controller
 
         public Boolean checkQuantityNull(string text)
         {
-           if(text == null)
+           if(text == "")
             {
                 return false;
             }
