@@ -18,7 +18,7 @@ namespace GymMe.Handler
                 return "Username Already Exists!";
             }
 
-            string role = "Guest";
+            string role = "Customer";
             userRepository.InsertUser(username, email, gender, role, password, dob);
 
             return "Successfully Registered";
