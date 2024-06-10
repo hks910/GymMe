@@ -90,21 +90,34 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Styles\CSS\LoginPage.css" />
+    <Content Include="Styles\CSS\Homepage.css" />
+    <Content Include="Styles\CSS\OrderSupplementPage.css" />
     <Content Include="Styles\CSS\NavBar.css" />
     <Content Include="Styles\CSS\OrderSupplement.css" />
+    <Content Include="Styles\CSS\ManageSupplementPage.css" />
+    <Content Include="Styles\CSS\ProfilePage.css" />
+    <Content Include="Styles\CSS\InsertSupplementPage.css" />
+    <Content Include="Styles\CSS\UpdateSupplementPage.css" />
     <Content Include="Styles\CSS\RegisterPage.css" />
     <Content Include="Styles\Img\GymMe-Logo-removebg.png" />
     <Content Include="Views\HomePage.aspx" />
     <Content Include="Views\LoginPage.aspx" />
     <Content Include="Views\LogOut.aspx" />
+    <Content Include="Views\ManageSupplementPage.aspx" />
     <Content Include="Views\OrderSupplement.aspx" />
+    <Content Include="Views\ProfilePage.aspx" />
+    <Content Include="Views\InsertSupplementPage.aspx" />
+    <Content Include="Views\UpdateSupplementPage.aspx" />
     <Content Include="Views\RegisterPage.aspx" />
     <Content Include="Views\CartPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Controller\SupplementController.cs" />
     <Compile Include="Controller\OrderController.cs" />
+    <Compile Include="Controller\ProfileController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
     <Compile Include="Factory\MsCartFactory.cs" />
     <Compile Include="Factory\MsSupplementFactory.cs" />
@@ -112,9 +125,12 @@
     <Compile Include="Factory\MsUserFactory.cs" />
     <Compile Include="Factory\TransactionDetailFactory.cs" />
     <Compile Include="Factory\TransactionHeaderFactory.cs" />
+    <Compile Include="Handler\UserHandler.cs" />
+    <Compile Include="Handler\SupplementHandler.cs" />
     <Compile Include="Handler\OrderHandler.cs" />
     <Compile Include="Handler\CreateTransactionHandler.cs" />
     <Compile Include="Handler\LoginHandler.cs" />
+    <Compile Include="Handler\ProfileHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -177,12 +193,40 @@
     <Compile Include="Views\LogOut.aspx.designer.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ManageSupplementPage.aspx.cs">
+      <DependentUpon>ManageSupplementPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ManageSupplementPage.aspx.designer.cs">
+      <DependentUpon>ManageSupplementPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\OrderSupplement.aspx.cs">
       <DependentUpon>OrderSupplement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\OrderSupplement.aspx.designer.cs">
       <DependentUpon>OrderSupplement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfilePage.aspx.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ProfilePage.aspx.designer.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InsertSupplementPage.aspx.cs">
+      <DependentUpon>InsertSupplementPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\InsertSupplementPage.aspx.designer.cs">
+      <DependentUpon>InsertSupplementPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateSupplementPage.aspx.cs">
+      <DependentUpon>UpdateSupplementPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateSupplementPage.aspx.designer.cs">
+      <DependentUpon>UpdateSupplementPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterPage.aspx.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>

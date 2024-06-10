@@ -54,6 +54,17 @@ namespace GymMe.Repositories
             return (from x in db.MsSupplements where x.SupplementID == id select x).FirstOrDefault();
         }
 
+        public MsSupplement getSupplementByName(string name)
+        {
+            return (from x in db.MsSupplements where x.SupplementName.Equals(name) select x).FirstOrDefault();
+        }
+
+        public List<MsSupplementType> getAllSupplementType()
+        {
+            return (from x in db.MsSupplementTypes select x).ToList();
+
+        }
+
 
 
 

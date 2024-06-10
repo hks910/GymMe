@@ -74,7 +74,7 @@ namespace GymMe.Controller
             {
                 return "Cannot clear cart.";
             }
-            return "Cart cleard successfully";
+            return "Cart cleared successfully";
         }
 
 

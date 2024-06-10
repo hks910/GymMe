@@ -42,6 +42,15 @@ namespace GymMe.Views
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl AdminNavbar;
 
         /// <summary>
+        /// CustomerContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CustomerContent;
+
+        /// <summary>
         /// RoleLbl control.
         /// </summary>
         /// <remarks>
@@ -49,5 +58,23 @@ namespace GymMe.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label RoleLbl;
+
+        /// <summary>
+        /// AdminContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AdminContent;
+
+        /// <summary>
+        /// UserList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView UserList;
     }
 }

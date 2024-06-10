@@ -13,10 +13,8 @@ namespace GymMe.Views
 {
     public partial class OrderSupplement : System.Web.UI.Page
     {
-        MsUserRepository UserRepository = new MsUserRepository();
-        MsSupplementRepository SupplementRepository = new MsSupplementRepository();
-        MsCartRepository CartRepository = new MsCartRepository();
         OrderController OrderController = new OrderController();
+        UserController UserController = new UserController();
 
 
         public int UserId { get; set; }
@@ -27,7 +25,7 @@ namespace GymMe.Views
 
             if (!IsPostBack)
             {   
-                RefreshCart();                
+                RefreshCart();              
             }
             if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
             {
@@ -40,7 +38,7 @@ namespace GymMe.Views
                 if (Session["user"] == null)
                 {
                     var id = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
-                    user = UserRepository.getUserbyId(id);
+                    user = UserController.GetUserById(id);
                     Session["user"] = user;
                     UserId = user.UserID;
 
@@ -53,10 +51,24 @@ namespace GymMe.Views
                 }
 
             }
-
-            List<MsCart> cartItems = CartRepository.getCartbyUserID(UserId);
+            List<MsCart> cartItems = OrderController.getCartById(UserId);
             CheckOutList.DataSource = cartItems;
             CheckOutList.DataBind();
+
+            foreach (GridViewRow checkoutRow in CheckOutList.Rows)
+            {
+                int rowIndex = checkoutRow.RowIndex;
+                int quantity = Convert.ToInt32(checkoutRow.Cells[3].Text);
+                int price = Convert.ToInt32(cartItems[rowIndex].MsSupplement.SupplementPrice);
+                int subTotal = quantity * price;
+
+                Label subTotalLabel = (Label)checkoutRow.FindControl("SubTotal");
+                subTotalLabel.Text = subTotal.ToString();
+            }
+
+
+            int totalPrice = cartItems.Sum(item => item.Quantity * item.MsSupplement.SupplementPrice);
+            TotalPriceLabel.Text = totalPrice.ToString();
 
         }
 
@@ -81,18 +93,22 @@ namespace GymMe.Views
                         int id = Convert.ToInt32(row.Cells[0].Text);
                         OrderController.updateCart(UserId, id, quantity);
                         RefreshCart();
+                        Message2.Text = "Succesfully updated cart";
+                        Message2.ForeColor = System.Drawing.Color.Green;
 
                     }
                     else
                     {
                         Message2.Text = orderController.checkQuantity(quantity);
+                        Message2.ForeColor = System.Drawing.Color.Red;
+
                     }
 
                 }
                 else
                 {
                     Message2.Text = "Value must be filled";
-
+                    Message2.ForeColor = System.Drawing.Color.Red;
                 }
 
 
@@ -128,16 +144,36 @@ namespace GymMe.Views
 
         protected void CheckOut_Click(object sender, EventArgs e)
         {
-            
-            List<MsCart> cartList = new List<MsCart>();
-            Message.Text = OrderController.doTransaction(UserId);
+            string result = OrderController.doTransaction(UserId);
+
+            Message.Text = result;
+            if (result.Equals("Checkout Successfull and Your Transaction already generated"))
+            {
+                Message.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                Message.ForeColor = System.Drawing.Color.Red;
+
+            }
+
             RefreshCart();
 
         }
 
         protected void ClearCart_Click(object sender, EventArgs e)
         {
-            Message.Text = OrderController.deleteAllCartByID(UserId);
+            string result = OrderController.deleteAllCartByID(UserId).Trim();
+            Message.Text = result;
+            if (result.Equals("Cart cleared successfully", StringComparison.OrdinalIgnoreCase))
+            {
+                Message.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                Message.ForeColor = System.Drawing.Color.Red;
+            }
+
             RefreshCart();
         }
 

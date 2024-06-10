@@ -4,8 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Gym Me</title>
-    <link href="../Styles/CSS/NavBar.css" rel="stylesheet" />
+    <title>Gym Me</title>    
+    <link rel="stylesheet" type="text/css" href="~/Styles/CSS/ManageSupplementPage.css" />
+
 
     <%-- Google Font --%>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +30,7 @@
                     <ul class="nav__links">
                         <li><a href="OrderSupplement.aspx">Order Supplement</a></li>
                         <li><a href="Transactions.aspx">History</a></li>
-                        <li><a href="Profile.aspx">Profile</a></li>
+                        <li><a href="ProfilePage.aspx">Profile</a></li>
                 
                     </ul>
                 </nav>
@@ -43,9 +44,9 @@
                 <nav>
                     <ul class="nav__links">
                         <li><a href="HomePage.aspx">Home</a></li>
-                        <li><a href="ManageSupplement.aspx">Manage Supplement</a></li>
+                        <li><a href="ManageSupplementPage.aspx">Manage Supplement</a></li>
                         <li><a href="OrderQueue.aspx">Order Queue</a></li>
-                        <li><a href="Profile.aspx">Profile</a></li>
+                        <li><a href="ProfilePage.aspx">Profile</a></li>
                         <li><a href="TransactionReport.aspx">Transaction Report</a></li>
                     </ul>
                 </nav>
@@ -53,9 +54,27 @@
             </header>
         </div>
 
-        <div>
+        <div id="CustomerContent" runat="server">
             <asp:Label ID="RoleLbl" runat="server" Text=""></asp:Label>
         </div>
+
+        <div id="AdminContent" runat="server">
+                <div class ="table-container">
+                   <div class="container">
+                        <h2>All Users List</h2
+                           <asp:GridView ID="UserList" runat="server" AutoGenerateColumns="False" CssClass="grid-view">
+                                <Columns>
+                                    <asp:BoundField DataField="UserID" HeaderText="User ID" SortExpression="UserID" />
+                                    <asp:BoundField DataField="UserName" HeaderText="Username" SortExpression="UserName" />
+                                    <asp:BoundField DataField="UserEmail" HeaderText="User Email" SortExpression="UserEmail" />
+                                    <asp:BoundField DataField="UserDOB" HeaderText="User DOB" SortExpression="UserDOB" />
+                                    <asp:BoundField DataField="UserGender" HeaderText="User Gender" SortExpression="UserGender" />
+                                    <asp:BoundField DataField="UserRole" HeaderText="User Role" SortExpression="UserRole" />
+                                </Columns>
+                           </asp:GridView>
+                    </div>
+                </div>
+        </div>        
 
 
     </form>

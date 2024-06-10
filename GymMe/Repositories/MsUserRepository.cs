@@ -50,8 +50,12 @@ namespace GymMe.Repositories
         // cari password dan dipake ketika mau update password
         public string getPassword(int id)
         {
-            return (from x in db.MsUsers where x.Equals(id) select x.UserPassword).FirstOrDefault();
+            return db.MsUsers
+                     .Where(x => x.UserID == id)
+                     .Select(x => x.UserPassword)
+                     .FirstOrDefault();
         }
+
 
         //nanti kalau user login pas mau add panggil function aja abis lewat logic login
         public void InsertUser(String userName, String userEmail,
@@ -66,7 +70,7 @@ namespace GymMe.Repositories
 
         //ini buat update, nanti abis lewat logic langsung panggil aja
         public void UpdateUser(int id, String userName, String userEmail,
-            DateTime userDOB, String userGender, String userRole, String userPassword)
+             String userGender, DateTime userDOB)
         {
 
             MsUser user = db.MsUsers.Find(id);
@@ -74,8 +78,6 @@ namespace GymMe.Repositories
             user.UserEmail = userEmail;
             user.UserDOB = userDOB;
             user.UserGender = userGender;
-            user.UserRole = userRole;
-            user.UserPassword = userPassword;
 
             db.SaveChanges();
 

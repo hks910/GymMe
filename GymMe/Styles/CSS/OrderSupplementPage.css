@@ -1,0 +1,211 @@
+﻿body {
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Logo {
+    cursor: pointer;
+    font-family: 'Permanent Marker', sans-serif;
+    color:white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #24252a;
+}
+
+.nav__links a,
+.LogoutButton {
+    font-family: "Comme", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    position: relative;
+}
+
+    .nav__links li {
+        padding: 0px 20px;
+    }
+
+        .nav__links li a {
+            transition: color 0.3s ease 0s;
+        }
+
+            .nav__links li a:hover {
+                color: lightgoldenrodyellow;
+                text-decoration: underline;
+            }
+
+.LogoutButton {
+    padding: 9px 25px;
+    background-color: white;
+    color:black;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+}
+
+    .LogoutButton:hover {
+        background-color: lightgoldenrodyellow;
+    }
+
+
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f2f5;
+}*/
+
+
+.table-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+}
+.container {
+    position: relative;
+    max-width: auto;
+    height:100%;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+    .container h2 {
+        font-family: 'Edu TAS Beginner', sans-serif;
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+.grid-view-container {
+    overflow-x: auto;
+}
+
+.grid-view {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .grid-view th,
+    .grid-view td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .grid-view th {
+        background-color: #f8f8f8;
+        color: #333;
+        font-family: 'Comme', sans-serif;
+        font-size: 16px;
+    }
+
+    .grid-view td {
+        font-family: 'Comme', sans-serif;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .grid-view tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .grid-view .command-button {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0 5px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Comme', sans-serif;
+        font-size: 14px;
+    }
+
+        .grid-view .command-button:hover {
+            background-color: #0056b3;
+        }
+
+a.insert-supplement {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-family: 'Comme', sans-serif;
+    font-size: 16px;
+}
+
+    a.insert-supplement:hover {
+        background-color: #218838;
+    }
+
+
+.text-message {
+    font-family: 'Comme', sans-serif;
+}
+.clear {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Comme', sans-serif;
+    font-size: 14px;
+}
+
+    .clear:hover {
+        background-color: #c82333;
+    }
+
+.checkout {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    color: #000;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Comme', sans-serif;
+    font-size: 14px;
+}
+
+    .checkout:hover {
+        background-color: #deaa2e;
+    }
