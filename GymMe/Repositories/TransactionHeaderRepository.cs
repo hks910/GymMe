@@ -10,7 +10,7 @@ namespace GymMe.Repositories
 
     public class TransactionHeaderRepository
     {
-        Database1Entities1 db = DatabaseSingleton.getInstance();
+        public static Database1Entities1 db = DatabaseSingleton.getInstance();
 
         //Buat bikin transaksi header baru 
         public TransactionHeader createTransactionHeader(int userId, DateTime transactionDate, String status)
@@ -21,20 +21,33 @@ namespace GymMe.Repositories
             return transactionHeader;
         }
 
+        //Buat get ambil semua transaction
+
+        public static List<TransactionHeader> getTransaction()
+        {
+            return (from x in db.TransactionDetail select x).ToList();
+        }
+
+        public static List<TransactionHeader> GetTransactions()
+        {
+            Database1Entities1 db = new Database1Entities1();
+            return db.TransactionDetail.ToList();
+        }
+
         //Buat view/get unhandled Transaction untuk role ADMIN
-        public List<TransactionHeader> getUnhandledTransactionHeader()
+        public static List<TransactionHeader> getUnhandledTransactionHeader()
         {
             return (from x in db.TransactionDetail where x.Status.Equals("Unhandled") select x).ToList();
         }
 
         //Buat kasih list ke ADMIN 
-        public List<TransactionHeader> getHandledTransactionHeader()
+        public static List<TransactionHeader> getHandledTransactionHeader()
         {
             return (from x in db.TransactionDetail where x.Status.Equals("Handled") select x).ToList();
         }
 
         //ketika admin mau change status dari unhandled ke handled
-        public void handlingTransaction(int id)
+        public static void handlingTransaction(int id)
         {
             TransactionHeader transactionHeader = db.TransactionDetail.Find(id);
             transactionHeader.Status = "Handled";
@@ -50,7 +63,7 @@ namespace GymMe.Repositories
 
         //ambil object untuk liat list transaksi header untuk user ini sendiri
 
-        public List<TransactionHeader> getTransactionHeadersbyUserId (int userId)
+        public static List<TransactionHeader> getTransactionHeadersbyUserId (int userId)
         {
             return (from x in db.TransactionDetail where x.UserID.Equals(userId) select x).ToList();
         }

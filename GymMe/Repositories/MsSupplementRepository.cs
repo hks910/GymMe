@@ -10,7 +10,7 @@ namespace GymMe.Repositories
     public class MsSupplementRepository
 
     {
-        Database1Entities1 db = DatabaseSingleton.getInstance();
+        private static Database1Entities1 db = DatabaseSingleton.getInstance();
 
         //dipake buat admin ketika mau input supplement
         public void insertSupplement(String supplementName, DateTime expiryDate, int price, int typeId)
@@ -54,7 +54,10 @@ namespace GymMe.Repositories
             return (from x in db.MsSupplements where x.SupplementID == id select x).FirstOrDefault();
         }
 
-
+        public static MsSupplement getSupplementByID(int id)
+        {
+            return (from x in db.MsSupplements where x.SupplementID == id select x).FirstOrDefault();
+        }
 
 
     }

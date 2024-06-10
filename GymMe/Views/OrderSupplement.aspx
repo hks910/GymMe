@@ -21,7 +21,7 @@
                     <nav>
                         <ul class="nav__links">
                             <li><a href="OrderSupplement.aspx">Order Supplement</a></li>
-                            <li><a href="Transactions.aspx">History</a></li>
+                            <li><a href="CustomerTransaction.aspx">History</a></li>
                             <li><a href="Profile.aspx">Profile</a></li>
                         </ul>
                     </nav>
