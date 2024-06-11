@@ -101,12 +101,10 @@ namespace GymMe.Views
 
             string result = controller.UpdatePassword(user.UserID, oldPassword, newPassword);
 
-            if (result == "Successfully Updated")
+            if (result == "Successfully Updated Password")
             {
                 ErrorLbl.ForeColor = System.Drawing.Color.Green;
                 ErrorLbl.Text = result;
-                // Automatically redirect to Login Page in 2 seconds
-                Response.AddHeader("refresh", "0.1;ProfilePage.aspx");
             }
             else
             {
