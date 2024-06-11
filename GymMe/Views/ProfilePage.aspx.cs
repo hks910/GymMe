@@ -46,7 +46,7 @@ namespace GymMe.Views
             }
             if (Session["user"] != null)
             {
-                if (user.UserRole != "Customer")
+                if (user.UserRole == "Guest")
                 {
                     Response.Redirect("~/Views/HomePage.aspx");
                 }

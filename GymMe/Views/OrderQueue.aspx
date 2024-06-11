@@ -6,7 +6,7 @@
 <head runat="server">
 
      <title>Gym Me</title>
- <link href="../Styles/CSS/NavBar.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Styles/CSS/OrderSupplementPage.css" />
 
  <%-- Google Font --%>
  <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,10 +31,10 @@
         <nav>
             <ul class="nav__links">
                 <li><a href="HomePage.aspx">Home</a></li>
-                <li><a href="ManageSupplement.aspx">Manage Supplement</a></li>
+                <li><a href="ManageSupplementPage.aspx">Manage Supplement</a></li>
                 <li><a href="OrderQueue.aspx">Order Queue</a></li>
                  <li><a href="HandledPage.aspx">Completed Order</a></li>
-                <li><a href="Profile.aspx">Profile</a></li>
+                <li><a href="ProfilePage.aspx">Profile</a></li>
                 <li><a href="TransactionReport.aspx">Transaction Report</a></li>
             </ul>
         </nav>
@@ -46,20 +46,21 @@
             <br />
             <asp:Label ID="RoleLbl" runat="server" Text=""></asp:Label>
         </div>
-
-        <div>
-            <br />
-            <br />
-            <asp:GridView ID="UnhandledOrderGv" runat="server" AutoGenerateColumns="false" OnRowEditing="UnhandledOrderGv_RowEditing" OnRowDeleting="UnhandledOrderGv_RowDeleting">
-                <Columns>
-                    <asp:BoundField DataField="TransactionId" HeaderText=" Transaction Id" SortExpression="TransactionId"></asp:BoundField>
-                    <asp:BoundField DataField="UserID" HeaderText="User ID" SortExpression="UserId"></asp:BoundField>
-                    <asp:BoundField DataField="TransactionDate" HeaderText="Transaction Date" SortExpression="TransactionDate"></asp:BoundField>
-                    <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status"></asp:BoundField>
-                    <asp:CommandField ShowDeleteButton="True" ShowHeader="True" HeaderText="View Detail" DeleteText="View Detail"></asp:CommandField>
-                    <asp:CommandField EditText="Handle" ShowCancelButton="False" ShowEditButton="True" ButtonType="Button" ShowHeader="True" HeaderText="Handle"></asp:CommandField>
-                </Columns>
-            </asp:GridView>
+        <div class ="table-container">
+            <div class="container">
+                    <br />
+                    <br />
+                    <asp:GridView ID="UnhandledOrderGv" runat="server" AutoGenerateColumns="false" OnRowEditing="UnhandledOrderGv_RowEditing" OnRowDeleting="UnhandledOrderGv_RowDeleting" CssClass="grid-view">
+                        <Columns>
+                            <asp:BoundField DataField="TransactionId" HeaderText=" Transaction Id" SortExpression="TransactionId"></asp:BoundField>
+                            <asp:BoundField DataField="UserID" HeaderText="User ID" SortExpression="UserId"></asp:BoundField>
+                            <asp:BoundField DataField="TransactionDate" HeaderText="Transaction Date" SortExpression="TransactionDate"></asp:BoundField>
+                            <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status"></asp:BoundField>
+                            <asp:CommandField ShowDeleteButton="True" ShowHeader="True" HeaderText="View Detail" DeleteText="View Detail"></asp:CommandField>
+                            <asp:CommandField EditText="Handle" ShowCancelButton="False" ShowEditButton="True" ButtonType="Button" ShowHeader="True" HeaderText="Handle"></asp:CommandField>
+                        </Columns>
+                    </asp:GridView>
+                </div>
         </div>
 
        

@@ -209,3 +209,7 @@ a.insert-supplement {
     .checkout:hover {
         background-color: #deaa2e;
     }
+
+.container i {
+    font-size: 2rem;
+}

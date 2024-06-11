@@ -31,10 +31,10 @@
         <nav>
             <ul class="nav__links">
                 <li><a href="HomePage.aspx">Home</a></li>
-                <li><a href="ManageSupplement.aspx">Manage Supplement</a></li>
+                <li><a href="ManageSupplementPage.aspx">Manage Supplement</a></li>
                 <li><a href="OrderQueue.aspx">Order Queue</a></li>
                  <li><a href="HandledPage.aspx">Completed Order</a></li>
-                <li><a href="Profile.aspx">Profile</a></li>
+                <li><a href="ProfilePage.aspx">Profile</a></li>
                 <li><a href="TransactionReport.aspx">Transaction Report</a></li>
             </ul>
         </nav>

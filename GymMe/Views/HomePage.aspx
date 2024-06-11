@@ -31,7 +31,7 @@
                     <ul class="nav__links">
                         <li><a href="OrderSupplement.aspx">Order Supplement</a></li>
                         <li><a href="CustomerTransaction.aspx">History</a></li>
-                        <li><a href="Profile.aspx">Profile</a></li>
+                        <li><a href="ProfilePage.aspx">Profile</a></li>
                 
                     </ul>
                 </nav>
@@ -48,7 +48,7 @@
                         <li><a href="ManageSupplementPage.aspx">Manage Supplement</a></li>
                         <li><a href="OrderQueue.aspx">Order Queue</a></li>
                          <li><a href="HandledPage.aspx">Completed Order</a></li>
-                        <li><a href="Profile.aspx">Profile</a></li>
+                        <li><a href="ProfilePage.aspx">Profile</a></li>
                         <li><a href="TransactionReport.aspx">Transaction Report</a></li>
                     </ul>
                 </nav>

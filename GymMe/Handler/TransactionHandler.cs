@@ -48,7 +48,8 @@ namespace GymMe.Handler
 
         public static MsSupplement getSupplementByID(int id)
         {
-            return MsSupplementRepository.getSupplementByID(id);
+            MsSupplementRepository msSupplementRepository = new MsSupplementRepository();
+            return msSupplementRepository.getSupplementById(id);
         }
     }
 }
