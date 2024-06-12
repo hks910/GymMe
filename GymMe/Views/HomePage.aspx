@@ -61,6 +61,8 @@
         </div>
 
         <div id="AdminContent" runat="server">
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+            <br />
                 <div class ="table-container">
                    <div class="container">
                         <h2>All Users List</h2

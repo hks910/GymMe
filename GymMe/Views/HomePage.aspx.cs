@@ -49,6 +49,7 @@ namespace GymMe.Views
                     AdminNavbar.Visible = true;
                     CustomerNavBar.Visible = false;
                     CustomerContent.Visible = false;
+                    Label1.Text = "Current Role : [Admin]";
                     List<MsUser> list = UserController.GetUsers();
                     UserList.DataSource = list;
                     UserList.DataBind();
